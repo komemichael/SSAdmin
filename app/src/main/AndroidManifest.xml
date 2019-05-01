@@ -19,6 +19,10 @@
 
         <activity android:name=".presentation.ListActivity">
         </activity>
+
+        <activity android:name=".presentation.inflate.AddBill"
+            android:theme="@style/AppTheme.popup_window_animation_phone">
+        </activity>
     </application>
 
 </manifest>

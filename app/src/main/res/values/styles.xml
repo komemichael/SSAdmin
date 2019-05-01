@@ -12,4 +12,10 @@
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
     </style>
 
+    <style name="AppTheme.popup_window_animation_phone">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
 </resources>

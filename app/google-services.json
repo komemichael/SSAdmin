@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "906647994191",
+    "firebase_url": "https://komefirebase.firebaseio.com",
+    "project_id": "komefirebase",
+    "storage_bucket": "komefirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906647994191:android:e221c8d953699e7b",
+        "android_client_info": {
+          "package_name": "com.srsys.ssadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906647994191-tvqiebli4lnogp037h26b3o7aj4o5tg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLdRKX4ESgUFqi9XSmHRDm0snYcLSWQDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906647994191-tvqiebli4lnogp037h26b3o7aj4o5tg2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
