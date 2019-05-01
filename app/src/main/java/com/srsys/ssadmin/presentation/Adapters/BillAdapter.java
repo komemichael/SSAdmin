@@ -16,12 +16,14 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.MyViewHolder> 
     private List<Bills> bills;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView billname, billdate;
+        public TextView billname, billdate, billamnt, billtype;
 
         public MyViewHolder(View view) {
             super(view);
             billname = view.findViewById(R.id.adapter_billname);
             billdate = view.findViewById(R.id.adapter_billdate);
+            billamnt = view.findViewById(R.id.adapter_billamnt);
+            billtype = view.findViewById(R.id.adapter_billtype);
         }
     }
 
@@ -34,15 +36,16 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, parent, false);
-
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Bills bill = bills.get(position);
-        holder.billdate.setText(bill.getDate().toString());
-        holder.billname.setText(bill.getNamebill());
+        holder.billdate.setText(bill.getDate());
+        holder.billname.setText(bill.getName());
+        holder.billamnt.setText(bill.getAmount());
+        holder.billtype.setText(bill.getType().substring(0,5));
     }
 
 

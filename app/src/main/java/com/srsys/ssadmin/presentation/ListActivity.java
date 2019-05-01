@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.srsys.ssadmin.R;
@@ -40,6 +41,9 @@ public class ListActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        accessBills = new AccessBills();
+        bills = accessBills.getBills();
+
         recyclerView = findViewById(R.id.list_recylerview);
 
         layoutManager = new LinearLayoutManager(this);
@@ -47,13 +51,10 @@ public class ListActivity extends Activity
         recyclerView.addItemDecoration(new DividerItemDecoration(this,
                 LinearLayoutManager.VERTICAL));
 
-        accessBills = new AccessBills();
-        bills = accessBills.getBills();
+        createOnclick();
 
         mAdapter = new BillAdapter(bills);
         recyclerView.setAdapter(mAdapter);
-
-        createOnclick();
     }
 
 
@@ -64,25 +65,25 @@ public class ListActivity extends Activity
             @Override
             public void onClick(View view, int position) {
                 Bills bill = bills.get(position);
-                Toast.makeText(getApplicationContext(), bill.getNamebill() + " is selected!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),bill.getName() + " is selected!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onLongClick(View view, int position) 
             {
-                View popupView = getLayoutInflater().inflate(R.layout.inflate_add_bill, null);
+                View popupView = getLayoutInflater().inflate(R.layout.inflate_display_bill_item, null);
 
-                final EditText addbill_text = popupView.findViewById(R.id.editText_addBill);
-                final Button addbill_btn = popupView.findViewById(R.id.add_bill_button);
-                addbill_btn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String name_bill = addbill_text.getText().toString();
-                        accessBills.addBill(name_bill);
-                    }
-                });
+                TextView billname = popupView.findViewById(R.id.display_billname);
+                TextView billamnt = popupView.findViewById(R.id.display_billamnt);
+                TextView billdate = popupView.findViewById(R.id.display_billdate);
 
-                final PopupWindow popupWindow = new PopupWindow(popupView, 1000,1400);
+                Bills bill = accessBills.getBills().get(position);
+
+                billname.setText(bill.getName());
+                billamnt.setText(bill.getAmount());
+                billdate.setText(bill.getDate());
+
+                final PopupWindow popupWindow = new PopupWindow(popupView, 1000,1000);
                 popupWindow.setAnimationStyle(R.style.popup_window_animation_phone);
                 popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
                 popupWindow.setFocusable(true);

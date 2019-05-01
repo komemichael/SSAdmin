@@ -2,5 +2,11 @@
 <resources>
     <color name="colorPrimary">#99ffff</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#66ccff</color>
+    
+    <color name="darkblue">#0099e6</color>
+    <color name="white">#ffffff</color>
+
+    <color name="appbackground_start">#ccffff</color>
+    <color name="appbackground_stop">#009999</color>
 </resources>

@@ -8,5 +8,7 @@ public interface BillPersistence
 {
     List<Bills> getBills();
 
-    void writeBill(String name);
+    void writeBill(String name, String date, String amount, String type);
+
+    boolean deleteBill(Bills bill);
 }

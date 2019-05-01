@@ -1,28 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="60dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/adapter_billname"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:text="Bill name"/>
 
         <TextView
             android:id="@+id/adapter_billdate"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="20dp"
+            android:textSize="10dp"
             android:text="Bill Date"/>
+
+        <TextView
+            android:id="@+id/adapter_billtype"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="Type"/>
+
+        <TextView
+            android:id="@+id/adapter_billamnt"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="15dp"
+            android:text="Amount"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -27,6 +27,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AccessBills accessBills = new AccessBills();
+
         configureAccountButton();
         configureAddBillButton();
     }

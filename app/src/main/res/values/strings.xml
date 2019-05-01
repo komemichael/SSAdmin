@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">SSAdmin</string>
+    <string name="datepaid">Date Paid</string>
+    <string name="amount">Amount</string>
+    <string name="billname">Bill Name"</string>
+    <string name="font_avenir_book">avenir_book</string>
+
+    <string name="bill_type_prompt">Bill type</string>
+    <string-array name="bill_types">
+        <item>Select Bill</item>
+        <item>Utility bill</item>
+        <item>Non-Utility Bill</item>
+    </string-array>
+
 </resources>

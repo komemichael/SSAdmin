@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/popup"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/display_billname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bill Name"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textSize="50dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/display_billamnt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bill Amount"
+        android:padding="10dp"
+        android:textSize="50dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/display_billdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bill Date"
+        android:padding="10dp"
+        android:textSize="50dp"
+        android:gravity="center"/>
+</LinearLayout>

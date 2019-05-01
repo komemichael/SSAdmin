@@ -1,60 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="500dp"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/popup">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="false"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_above="@+id/editText_addBill_layout">
-
+        android:layout_above="@+id/editText_addBill_layout"
+        android:layout_marginBottom="30dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Name of Bill"
-            android:textAllCaps="true"
+            android:textSize="30dp"
+            android:text="Add Payment"
             android:textStyle="bold"
-            android:textSize="30dp"/>
+            android:textAllCaps="true"
+            android:gravity="center"/>
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/editText_addBill_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/add_bill_button"
+        android:layout_above="@+id/editText_addBillDate_layout"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:padding="20dp">
+        android:orientation="vertical">
+
 
         <EditText
             android:id="@+id/editText_addBill"
+            android:layout_margin="10dp"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textSize="15dp"
             android:ems="10"
-            android:inputType="textPersonName"/>
+            android:fontFamily="sans-serif-smallcaps"
+            android:clickable="true"
+            android:hint="@string/billname"/>
     </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/editText_addBillDate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText_addBillAmount_layout"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/editText_addBill_date"
+            android:layout_margin="10dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:textSize="15dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-smallcaps"
+            android:clickable="true"
+            android:hint="@string/datepaid"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editText_addBillAmount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/add_bill_billtype"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/editText_addBill_amount"
+            android:layout_margin="10dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-smallcaps"
+            android:clickable="true"
+            android:inputType="numberDecimal"
+            android:hint="@string/amount"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/add_bill_billtype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/add_bill_button"
+        android:padding="30dp">
+
+        <Spinner
+            android:id="@+id/addbilltype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/bill_types"
+            android:prompt="@string/bill_type_prompt" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/add_bill_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
         android:padding="30dp">
         <Button
             android:id="@+id/add_bill_button_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Bill"/>
+            style="@style/Button"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Add"/>
     </LinearLayout>
 </RelativeLayout>
