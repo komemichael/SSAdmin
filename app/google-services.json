@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "906647994191-q35j2hae40kr8mojrviq9o9onknjkl3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.srsys.ssadmin",
+            "certificate_hash": "7b6baaf38c4a5fbdcf27727e26fde26a742307ad"
+          }
+        },
+        {
           "client_id": "906647994191-tvqiebli4lnogp037h26b3o7aj4o5tg2.apps.googleusercontent.com",
           "client_type": 3
         }

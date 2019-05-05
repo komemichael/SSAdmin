@@ -3,119 +3,107 @@
     android:layout_width="match_parent"
     android:layout_height="500dp"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/popup"
-    style="@style/rounded">
+    android:background="@drawable/popup">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText_addBill_layout"
+        android:layout_above="@+id/layout_username_createaccount"
         android:layout_marginBottom="30dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30dp"
-            android:text="Add Payment"
+            android:text="Create Account"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:gravity="center"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/editText_addBill_layout"
+        android:id="@+id/layout_username_createaccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText_addBillDate_layout"
+        android:layout_above="@+id/layout_password_createaccount"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:orientation="vertical">
 
 
         <EditText
-            android:id="@+id/editText_addBill"
+            android:id="@+id/editText_username_createaccount"
             android:layout_margin="10dp"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textSize="15dp"
             android:ems="10"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="sans-serif"
             android:clickable="true"
-            android:hint="@string/billname"/>
+            android:inputType="text"
+            android:hint="Username"/>
     </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/editText_addBillDate_layout"
+        android:id="@+id/layout_password_createaccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText_addBillAmount_layout"
+        android:layout_above="@+id/layout_email_createaccount"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:orientation="vertical">
 
 
         <EditText
-            android:id="@+id/editText_addBill_date"
+            android:id="@+id/editText_password_createaccountt"
             android:layout_margin="10dp"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:textSize="15dp"
             android:ems="10"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="sans-serif"
             android:clickable="true"
-            android:hint="@string/datepaid"/>
+            android:inputType="textPassword"
+            android:hint="Password"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/editText_addBillAmount_layout"
+        android:id="@+id/layout_email_createaccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/add_bill_billtype"
+        android:layout_above="@+id/add_account_button"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:orientation="vertical">
 
 
         <EditText
-            android:id="@+id/editText_addBill_amount"
+            android:id="@+id/editText_email_createaccount"
             android:layout_margin="10dp"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textSize="15dp"
             android:ems="10"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="sans-serif"
             android:clickable="true"
-            android:inputType="numberDecimal"
-            android:hint="@string/amount"/>
+            android:inputType="text"
+            android:hint="Email Address"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/add_bill_billtype"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/add_bill_button"
-        android:padding="30dp">
 
-        <Spinner
-            android:id="@+id/addbilltype"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/bill_types"
-            android:prompt="@string/bill_type_prompt" />
-    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/add_bill_button"
+        android:id="@+id/add_account_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:padding="30dp">
         <Button
-            android:id="@+id/add_bill_button_btn"
+            android:id="@+id/add_account_button_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Button"

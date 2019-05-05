@@ -52,11 +52,23 @@ public class ListActivity extends Activity
                 LinearLayoutManager.VERTICAL));
 
         createOnclick();
+        configureBackButton();
 
         mAdapter = new BillAdapter(bills);
         recyclerView.setAdapter(mAdapter);
     }
 
+
+    public void configureBackButton()
+    {
+        Button backbutton = findViewById(R.id.bill_list_back_button);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
 
     public void createOnclick()
     {

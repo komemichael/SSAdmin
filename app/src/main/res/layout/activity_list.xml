@@ -3,14 +3,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/app_background">
+
+    <LinearLayout
+        android:id="@+id/header1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:background="@color/appbackground_stop">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SS Admin"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/appbackground_start"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/header2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical"
+        android:background="@color/appbackground_stop"
+        android:layout_below="@+id/header1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Bills"
+            android:textStyle="normal"
+            android:textColor="@color/colorAccent"
+            android:gravity="center"
+            android:textSize="20dp"/>
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list_recylerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="450dp"
         android:scrollbars="vertical"
-        tools:listitem="@layout/list_item"/>
+        tools:listitem="@layout/list_item"
+        android:layout_below="@+id/header2"/>
+
+    <Button
+        android:id="@+id/bill_list_back_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Button"
+        android:text="Back"
+        android:textStyle="bold"
+        android:textColor="@color/appbackground_stop"
+        android:background="@color/appbackground_start"
+        android:layout_below="@id/list_recylerview"/>
 
     <ProgressBar
         android:id="@+id/loading_progress_bar"
@@ -21,13 +70,4 @@
         android:visibility="gone"
         tools:visibility="visible"/>
 
-    <!--<android.support.design.widget.TabLayout-->
-        <!--android:id="@+id/tablayout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:layout_gravity="bottom|center"-->
-        <!--android:background="@color/transparent_background_color"-->
-        <!--app:tabBackground="@drawable/tab_selector"-->
-        <!--app:tabGravity="center"-->
-        <!--app:tabIndicatorHeight="0dp"/>-->
 </RelativeLayout>

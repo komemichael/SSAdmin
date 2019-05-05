@@ -2,43 +2,40 @@ package com.srsys.ssadmin.persistence.firebase;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.srsys.ssadmin.objects.Bills;
-import com.srsys.ssadmin.persistence.BillPersistence;
+import com.srsys.ssadmin.objects.User;
+import com.srsys.ssadmin.persistence.UserPersistence;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BillPersistenceFirebase implements BillPersistence
+public class UserPersistenceFirebase implements UserPersistence
 {
-    List<Bills> bills;
+    List<User> users;
 
     private FirebaseDatabase database;
     private DatabaseReference myRef;
-    private String logged_in_user;
 
-
-    public BillPersistenceFirebase()
+    public UserPersistenceFirebase()
     {
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference().child("Bills");
+        myRef = database.getReference().child("User");
 
-        bills  = new ArrayList<>();
+        users  = new ArrayList<>();
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                bills.clear();
+                users.clear();
                 for (DataSnapshot ds: dataSnapshot.getChildren())
                 {
-                    Bills b = ds.getValue(Bills.class);
-                    bills.add(b);
+                    User u = ds.getValue(User.class);
+                    users.add(u);
                 }
             }
 
@@ -50,25 +47,29 @@ public class BillPersistenceFirebase implements BillPersistence
     }
 
     @Override
-    public void writeBill(String name, String date, String amount, String type) {
-        Bills bill = new Bills(name, date, amount, type);
-        bill.setId(myRef.push().getKey());
-        bill.setAccountName(logged_in_user);
-        myRef.child(bill.getId()).setValue(bill);
+    public void writeUser(String username, String pass, String email) {
+        User user = new User(username, pass, email);
+        user.setId(myRef.push().getKey());
+        user.setName(username);
+        myRef.child(user.getId()).setValue(user);
     }
 
     @Override
-    public boolean deleteBill(Bills bill)
+    public boolean deleteUser(User user)
     {
-        myRef.child(bill.getId()).removeValue();
-        if (myRef.child(bill.getId()).equals(null))
+        myRef.child(user.getId()).removeValue();
+        if (myRef.child(user.getId()).equals(null))
             return true;
         return false;
     }
 
     @Override
-    public List<Bills> getBills()
+    public List<User> getUsers()
     {
-        return this.bills;
+        return this.users;
+    }
+
+    public void setDatabase(FirebaseDatabase database) {
+        this.database = database;
     }
 }
